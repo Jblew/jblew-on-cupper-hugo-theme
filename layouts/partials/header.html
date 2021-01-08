@@ -5,19 +5,84 @@
     <span>{{ .Site.Params.header.midtitle2 }}</span>
   </h1>
   <h2>{{ .Site.Params.header.subtitle }}</h2>
-  <!--<div>
-    <div class="intro">
-      <a
-        class="logo"
-        href="{{ .Site.BaseURL }}"
-        aria-label="{{ .Site.Title }} home page"
-      >
-        {{ partial "logo.html" . }}
-      </a>
-      <p class="library-desc">
-        {{ with .Site.Params.description }} {{ . | markdownify }} {{ end }}
-      </p>
-    </div>
-    {{ partial "nav.html" . }}
-  </div>-->
 </header>
+<style>
+
+header.intro {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    color: white;
+}
+
+header.intro h1, header.intro h2 {
+    font-weight: 400;
+    margin: 0;
+    text-shadow: 0px 1px 6px rgba(255, 255, 255, 0.4);
+}
+
+header.intro h1 {
+    display: block;
+}
+
+header.intro h1 span {
+    display: block;
+    font-size: 16px;
+}
+
+header.intro h1 span:nth-child(1) {
+    margin-top: 1rem;
+    font-size: 10px;
+    letter-spacing: 3%;
+    line-height: 2rem;
+}
+
+header.intro h1 span:nth-child(2) {
+    font-size: 45px;
+    line-height: 4rem;
+    margin-top: 1rem;
+}
+
+header.intro h1 span:nth-child(3) {
+    font-size: 32px;
+    line-height: 4rem;
+    margin-bottom: 1rem;
+}
+
+header.intro h1 span:nth-child(2), header.intro h1 span:nth-child(3) {
+    text-shadow: 0px 1px 6px rgba(255, 255, 255, 0.4), 1px 1px 0 black;
+}
+
+header.intro h2 {
+    font-size: 12px;
+    line-height: 3rem;
+    margin-bottom: 1rem;
+}
+
+@media(min-width: {{ .Site.Params.mobileMediaBreakpoint }}) {
+  header.intro h1 span:nth-child(1) {
+    margin-top: 3rem;
+    font-size: 12px;
+    letter-spacing: 2px;
+    line-height: 2rem;
+  }
+
+  header.intro h1 span:nth-child(2) {
+    margin-top: 0;
+    display: inline-block;
+    font-size: 50px;
+    line-height: 4rem;
+  }
+
+  header.intro h1 span:nth-child(3) {
+        margin-top: 0;
+      display: inline-block;
+      font-size: 50px;
+      line-height: 4rem;
+  }
+
+  header.intro h2 {
+    font-size: 16px;
+  }
+}
+</style>
