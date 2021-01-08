@@ -1,0 +1,67 @@
+<style>
+.wrapper {
+    position: relative;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.wrapper::before {
+  content: '';
+  position: absolute;
+  top: 70px;
+  right: 15px;
+  bottom: 0;
+  left: 15px;
+  z-index: 1;
+  background: var(--color-redshadow-inner);
+  box-shadow: 0px 0px 6px 4px var(--color-redshadow-inner), 0px 0px 90px 55px var(--color-redshadow-outer);  
+}
+
+@media(min-width: {{ .Site.Params.mobileMediaBreakpoint }}) {
+  .wrapper::before {
+    left: 0;
+    right: 0;
+    top: 100px;
+    box-shadow: 0px 0px 30px 20px var(--color-redshadow-inner), 0px 0px 90px 55px var(--color-redshadow-outer);  
+  }
+}
+
+.wrapper > * {
+  position: relative;
+  z-index: 2;
+}
+
+.page {
+  width: 100%;
+  background: white url(/oldschoolheader.png) no-repeat top center;
+  box-shadow: 0px 0px 15px 10px var(--color-redshadow-inner);  
+  padding-top: 6rem;
+  display: block;
+}
+
+.page > main {
+  width: 100%;
+  padding: 0 1rem;
+}
+.page > aside {
+  width: 100%;
+  padding: 0 1rem;
+}
+
+@media(min-width: {{ .Site.Params.mobileMediaBreakpoint }}) {
+  .page {
+    display: flex;
+  }
+
+  .page > main {
+    width: calc(100% - var(--sidebar-width));
+    padding-left: 1rem;
+    padding-right: 0.5rem;
+  }
+  .page > aside {
+    width: var(--sidebar-width);
+    padding-left: 1rem;
+    padding-right: 0.5rem;
+  }
+}
+</style>
