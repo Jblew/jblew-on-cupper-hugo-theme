@@ -1,3 +1,13 @@
 <aside class="sidebar">
 {{ partial "sidebar-widgets.html" . }}
 </aside>
+<style>
+    .sidebar h2 {
+        margin-bottom: 0;
+        border-bottom: 2px solid var(--color-accent);
+    }
+
+    .sidebar h2:first-of-type {
+        margin-top: 0;
+    }
+</style>
