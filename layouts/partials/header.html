@@ -1,10 +1,12 @@
 <header class="intro" role="banner">
-  <h1>
-    <span>{{ .Site.Params.header.supertitle }}</span>
-    <span>{{ .Site.Params.header.midtitle1 }}</span>
-    <span>{{ .Site.Params.header.midtitle2 }}</span>
-  </h1>
+  <a href="{{ .Site.Params.header.link }}">
+    <h1>
+      <span>{{ .Site.Params.header.supertitle }}</span>
+      <span>{{ .Site.Params.header.midtitle1 }}</span>
+      <span>{{ .Site.Params.header.midtitle2 }}</span>
+    </h1>
   <h2>{{ .Site.Params.header.subtitle }}</h2>
+  </a>
 </header>
 <style>
 
@@ -13,6 +15,15 @@ header.intro {
     margin: 0 auto;
     text-align: center;
     color: white;
+}
+
+header a, header a:hover {
+  display: block;
+  margin: 0;
+  padding: 0;
+  color: inherit;
+  text-decoration: none;
+  background: none;
 }
 
 header.intro h1, header.intro h2 {
