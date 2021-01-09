@@ -7,16 +7,21 @@
   <h1>{{ .Title }}</h1>
   {{ end }}
   <ul class="patterns-list" id="list">
+    {{ $currentLang := .Site.Language.Lang }}
     {{ $pages := .Pages }}
-    {{ if .IsHome }}{{ $pages = .Site.RegularPages }}{{ end }}
+    {{ if .IsHome }}
+    {{ $pages = (where site.AllPages "Section" "posts") }}
+    {{ end }}
     {{ range $pages }}
-    <li>
-      <h2>
-        <a href="{{ .RelPermalink }}">
-          {{ .Title }}
-        </a>
-      </h2>
-    </li>
+      {{if or (not .Translations) (eq .Lang $currentLang )}}
+      <li>
+        <h2>
+          <a href="{{ .RelPermalink }}">
+            {{ .Title }}
+          </a>
+        </h2>
+      </li>
+      {{ end }}
     {{ end }}
   </ul>
 </main>
