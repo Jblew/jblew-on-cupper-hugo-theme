@@ -1,0 +1,18 @@
+{{ define "main" }}
+<main id="main">
+    {{ $archYear := .Date.Format "2006" }}
+
+    <h1>{{ i18n "archive_for" }} {{ $archYear }}</h1>
+
+    {{ $currentLang := .Site.Language.Lang }}
+
+    {{ $pages := (where site.AllPages "Section" "posts") }}
+    {{ range $pages }}
+        {{ if eq (.Date.Format "2006") $archYear }}
+            {{if or (not .Translations) (eq .Lang $currentLang )}}
+                {{ partial "list_summary.html" . }}
+            {{ end }}
+        {{ end }}
+    {{ end }}
+</main>
+{{ end }}
