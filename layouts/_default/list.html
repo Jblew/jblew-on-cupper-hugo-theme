@@ -6,7 +6,7 @@
   {{ if not .IsHome }}
   <h1>{{ .Title }}</h1>
   {{ end }}
-  <ul class="patterns-list" id="list">
+
     {{ $currentLang := .Site.Language.Lang }}
     {{ $pages := .Pages }}
     {{ if .IsHome }}
@@ -14,15 +14,8 @@
     {{ end }}
     {{ range $pages }}
       {{if or (not .Translations) (eq .Lang $currentLang )}}
-      <li>
-        <h2>
-          <a href="{{ .RelPermalink }}">
-            {{ .Title }}
-          </a>
-        </h2>
-      </li>
+        {{ partial "list_summary.html" . }}
       {{ end }}
     {{ end }}
-  </ul>
 </main>
 {{ end }}
