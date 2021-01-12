@@ -10,7 +10,7 @@
     {{ $currentLang := .Site.Language.Lang }}
     {{ $pages := .Pages }}
     {{ if .IsHome }}
-    {{ $pages = (where site.AllPages "Section" "posts") }}
+    {{ $pages = (where (where site.AllPages "Section" "posts") "Kind" "page") }}
     {{ end }}
     {{ range $pages }}
       {{if or (not .Translations) (eq .Lang $currentLang )}}

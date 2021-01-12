@@ -6,7 +6,7 @@
 
     {{ $currentLang := .Site.Language.Lang }}
 
-    {{ $pages := (where site.AllPages "Section" "posts") }}
+    {{ $pages = (where (where site.AllPages "Section" "posts") "Kind" "page") }}
     {{ range $pages }}
         {{ if eq (.Date.Format "2006") $archYear }}
             {{if or (not .Translations) (eq .Lang $currentLang )}}
