@@ -34,7 +34,26 @@ main h1, main h2, main h3, main h4, main h5, main h6 {
     color: var(--color-accent);
 }
 
-main h1, main h2 {
+
+main article {
+  margin-bottom: 3.5rem;
+}
+
+main article h1, main article h2 {
     border-bottom: 2px solid var(--color-accent);
+}
+
+main article h1:first-child, main article h2:first-child {
+  margin-bottom: 0;
+}
+
+main article footer {
+  border-top: 1px dashed #bbb;
+  margin-top: 1.875rem;
+  padding-bottom: 1.875rem;
+}
+
+main article footer .pull-right {
+  float: right;
 }
 </style>

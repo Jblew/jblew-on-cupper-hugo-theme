@@ -1,4 +1,4 @@
-<footer role="contentinfo">
+<footer class="sitefooter" role="contentinfo">
   <small>
   {{ with .Site.Params.footer }}
     {{ . | markdownify }}
@@ -6,7 +6,7 @@
   </small>
 </footer>
 <style>
-  footer {
+  .sitefooter {
     color: white;
     width: 100%;
     text-align: center;
@@ -14,11 +14,11 @@
     margin-bottom: 15rem;
   }
 
-  footer a {
+  .sitefooter a {
     color: white;
   }
 
-  footer a:hover {
+  .sitefooter a:hover {
     text-decoration: none;
     background: none;
   }

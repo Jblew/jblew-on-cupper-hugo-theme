@@ -8,9 +8,13 @@
     {{ .Summary }}
 
     {{ if .Truncated }}
-    <!-- This <div> includes a read more link, but only if the summary is truncated... -->
-    <div>
         <a href="{{ .RelPermalink }}">Read More…</a>
-    </div>
     {{ end }}
+
+    <footer>
+        {{ .Params.author | default $.Site.Params.author }},
+        <time class="post-date pull-right" datetime="{{ .Date | safeHTML }}">
+            {{ .Date.Day }} {{ index $.Site.Params.monthNames (printf "%d" .Date.Month) }} {{ .Date.Year }}
+        </time>
+    </footer>
 </article>
