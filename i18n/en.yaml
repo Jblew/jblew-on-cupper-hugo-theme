@@ -1,2 +1,4 @@
 - id: archive_for
   translation: 'Archive for'
+- id: read_more
+  translation: 'Read More…'
