@@ -40,11 +40,10 @@ main article {
 }
 
 main article h1, main article h2 {
-    border-bottom: 2px solid var(--color-accent);
-}
-
-main article h1:first-child, main article h2:first-child {
-  margin-bottom: 0;
+    border-bottom: 1px solid var(--color-accent);
+    padding-bottom: 2px;
+    margin-bottom: -2px;
+    box-sizing: border-box;
 }
 
 main article footer {
