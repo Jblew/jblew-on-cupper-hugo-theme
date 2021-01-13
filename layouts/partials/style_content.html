@@ -9,7 +9,7 @@ main > *:first-child {
   margin-top: 0;
 }
 
-main h1:first-of-type, main h2:first-of-type, main h3:first-of-type, main img:first-of-type {
+main h1:first-of-type, main h2:first-of-type, main h3:first-of-type {
   margin-top: 0;
 }
 
@@ -40,10 +40,21 @@ main article {
 }
 
 main article h1, main article h2 {
-    border-bottom: 1px solid var(--color-accent);
-    padding-bottom: 2px;
-    margin-bottom: -2px;
-    box-sizing: border-box;
+    /* border-top: 1px solid var(--color-accent); */
+    /* padding-bottom: 2px; */
+    /* margin-bottom: -2px; */
+    /* box-sizing: border-box; */
+    margin-bottom: 1.875rem;
+    background: white;
+    box-shadow: 5px 5px 15px 5px rgba(150,50,0,0.3);
+    padding: 0.9375rem;
+    margin-left: -0.9375rem;
+    margin-right: -0.9375rem;
+}
+
+main article header img {
+  /* margin-top: 0.9375rem; */
+  margin-top: 0;
 }
 
 main article footer {
